@@ -1,4 +1,6 @@
-from sympy import symbols, sin, cos
+#Modelling a double pendulum system fixed at a point
+
+from sympy import symbols
 from sympy.physics.mechanics import dynamicsymbols, ReferenceFrame, Point
 
 #Create symbols
