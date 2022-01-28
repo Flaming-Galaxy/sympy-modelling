@@ -1,3 +1,5 @@
+# Numerical solution of the two body problem relative to an inertial frame
+
 from scipy.integrate import solve_ivp
 import numpy.linalg as linalg
 
