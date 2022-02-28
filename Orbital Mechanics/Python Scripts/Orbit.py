@@ -56,3 +56,4 @@ ax.plot_wireframe(x, y, z)
 
 # Plot satellite orbit
 ax.plot(Rx, Ry, Rz)
+plt.show()
