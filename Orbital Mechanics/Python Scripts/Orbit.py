@@ -57,3 +57,19 @@ ax.plot_wireframe(x, y, z)
 # Plot satellite orbit
 ax.plot(Rx, Ry, Rz)
 plt.show()
+
+# Calculate maximum and minimum radii
+r = linalg.norm(np.vstack((Rx, Ry, Rz)), axis=0)
+    
+r_max = np.max(r)
+i_max = np.argmax(r) # Index of max radius
+r_min = np.min(r)
+i_min = np.argmin(r) # Index of min radius
+
+# Calculate velocities at maximum and minimum radii
+v_rmax = linalg.norm([sol.y[3,i_max], sol.y[4,i_max], sol.y[5,i_max]])
+v_rmin = linalg.norm([sol.y[3,i_min], sol.y[4,i_min], sol.y[5,i_min]])
+
+# Return results
+print("The velocity of the satellite is {}km/s at the maximum radius of {}km".format(v_rmax, r_max/1000))
+print("The velocity of the satellite is {}km/s at the minumum radius of {}km".format(v_rmin, r_min/1000))
